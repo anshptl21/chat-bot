@@ -1,6 +1,8 @@
-var alphabet = [];
+var keyboard = [];
+var letterList = [];
+var repeatingList = [];
+function creatingKeyBoard(){
 
-function KeyBoardKey(){
 	/* creating array list for keyboard */
 	var q = document.getElementById("q").innerHTML;
 	var w = document.getElementById("w").innerHTML;
@@ -28,300 +30,328 @@ function KeyBoardKey(){
 	var b = document.getElementById("b").innerHTML;
 	var n = document.getElementById("n").innerHTML;
 	var m = document.getElementById("m").innerHTML;
-	alphabet.push(q, w, e, r, t, y, u, i, o, p, a, s, d, f, g, h, j, k, l, z, x, c, v, b, n, m);
-	console.log(alphabet);
+	keyboard.push(q, w, e, r, t, y, u, i, o, p, a, s, d, f, g, h, j, k, l, z, x, c, v, b, n, m);
 	
 }
 
 
-function choosingKeyBoard(key){
-	/* identifying which letter was clicked on */
-	KeyBoardKey();
-	for (letter in alphabet){
-		if (key == alphabet[letter]){
-			var keyboard;
-			keyboard = alphabet[letter];
-			break;
+function choosingKeyBoard(key) {
+	creatingKeyBoard();
+	for (i in keyboard){
+		if (key === keyboard[i]){
+			var letter;
+			letter = key;
 		}
 	}
-	/* filling out row #1 with letters till it reaches the limit */
-	var row = 1;
-	while (row <= 5){
-		console.log("starting row 1 while loop");
-		if (document.getElementById(row).value == null){
-			console.log("starting row 1 if statement");
-			document.getElementById(row).value = keyboard;
-			console.log(document.getElementById(row).value);
-			document.getElementById(row).innerHTML = keyboard;
-			console.log(document.getElementById(row).innerHTML);
-			break;
-		}
-		row++;
-		console.log("ending row 1 while loop");
-	} 
-
-	/* pressing enter than row 2 can be filled out */
-	if (document.getElementById("enter").value === "enter1"){
-		while (row <= 10){
-		console.log("starting row 1 while loop");
-		if (document.getElementById(row).value == null){
-			console.log("starting row 1 if statement");
-			document.getElementById(row).value = keyboard;
-			console.log(document.getElementById(row).value);
-			document.getElementById(row).innerHTML = keyboard;
-			console.log(document.getElementById(row).innerHTML);
-			break;
-		}
-		row++;
-		console.log("ending row 1 while loop");
-		} 	
-	}
-	
-	if (document.getElementById("enter").value === "enter2"){
-		while (row <= 15){
-		console.log("starting row 1 while loop");
-		if (document.getElementById(row).value == null){
-			console.log("starting row 1 if statement");
-			document.getElementById(row).value = keyboard;
-			console.log(document.getElementById(row).value);
-			document.getElementById(row).innerHTML = keyboard;
-			console.log(document.getElementById(row).innerHTML);
-			break;
-		}
-		row++;
-		console.log("ending row 1 while loop");
-		} 	
-	}
-
-	if (document.getElementById("enter").value === "enter3"){
-		while (row <= 20){
-		console.log("starting row 1 while loop");
-		if (document.getElementById(row).value == null){
-			console.log("starting row 1 if statement");
-			document.getElementById(row).value = keyboard;
-			console.log(document.getElementById(row).value);
-			document.getElementById(row).innerHTML = keyboard;
-			console.log(document.getElementById(row).innerHTML);
-			break;
-		}
-		row++;
-		console.log("ending row 1 while loop");
-		}
-	} 
-	if (document.getElementById("enter").value === "enter4"){
-		while (row <= 25){
-		console.log("starting row 1 while loop");
-		if (document.getElementById(row).value == null){
-			console.log("starting row 1 if statement");
-			document.getElementById(row).value = keyboard;
-			console.log(document.getElementById(row).value);
-			document.getElementById(row).innerHTML = keyboard;
-			console.log(document.getElementById(row).innerHTML);
-			break;
-		}
-		row++;
-		console.log("ending row 1 while loop");
-		} 	
-	}
-		
-	}
-	
-	
 
 
-
-function backspace(){
-	document.getElementById("backspace").value = "backspace"
-	var id = 1; 
-	while (id <= 25){
-		if (document.getElementById("enter").value === "enter1" || document.getElementById("enter").value === "enter2" || document.getElementById("enter").value === "enter3" || document.getElementById("enter").value === "enter4"){
-			break;
-		} else
-		if (document.getElementById(id).value == null){
-			if (id > 0){
-				var del = id - 1;
-				document.getElementById(del).innerHTML = null;
-				document.getElementById(del).value = null;
-				break;
-			}
-		}
-		id++;
-	}
-
-
-}
-
-
-/* function enterWord will submit the word and check its values */
-
-function enterWord(){
 	var id = 1;
-	var i = 0;
-		console.log(id);
-		while (document.getElementById(id).value !== null){
-		if (document.getElementById(id).value == null){
-			document.getElementById(id).style.border = "3px solid red";
-			console.log("changing color to red");
-			break;
-		} else {
-			var word = [];
-			word.push("L", "O", "V", "E", "S");
-				console.log(word[i]);
-				console.log(document.getElementById(id).innerHTML);
-				if (document.getElementById(id).innerHTML == word[i]){
-					document.getElementById(id).style.color = "green";
-					console.log("changing color to green");
-				} else {
-					document.getElementById(id).style.color = "yellow";
-					console.log("changing color to yellow");
+	while (id <= 25){
+			if (letter == undefined){
+				break; 
+			}
+			if (document.getElementById("win").style.display === "inherit"){
+				break;
+			}
+			var text_box = document.getElementById(id).className;
+			var text_box_value = document.getElementById(id).value;
+		if (text_box === "row1 one"){
+				if (document.getElementById(id).value == undefined){
+					document.getElementById(id).innerHTML = letter;
+					document.getElementById(id).value = letter;
+					break;
 				}
-			}
-				id++;
-				i++;
-			}
-			return true;
-		}
-
-
-
-function enterWord(){
-	var row = 1;
-	var i = 0;
-	while (row <= 5){
-		if (document.getElementById(row).value !== null){
-		if (row <= 5){
-			var word = [];
-			word.push("L", "O", "V", "E", "S");
-			if (document.getElementById(row).innerHTML == word[i]){
-				document.getElementById(row).style.border = "3px solid green";
-			} else if (word.includes(document.getElementById(row).innerHTML)){
-				document.getElementById(row).style.border = "3px solid yellow";
-			} else {
-				document.getElementById(row).style.border = "3px solid gray";
-			}
-		}
-	}
-		row++;
-		i++;
-		console.log("Row is " + row);
-	}
-	document.getElementById("enter").value = "enter1";
-i = 0;
-	console.log("Row after while loop is " + row);
-		while (row <= 10){
-			var id = 0;
-			console.log(document.getElementById(row).value)
-			if (document.getElementById(row).value === undefined){
-				break;
-			} else if (document.getElementById(row).value !== null){
-			if (row <= 10){
-				var word = [];
-				word.push("L", "O", "V", "E", "S");
-				if (document.getElementById(row).innerHTML === word[i]){
-				document.getElementById(row).style.border = "3px solid green";
-			} else if (word.includes(document.getElementById(row).innerHTML)){
-				document.getElementById(row).style.border = "3px solid yellow";
-			} else {
-				document.getElementById(row).style.border = "3px solid gray";
-			}
-		}
-	}
-		row++;
-		i++;
-		console.log("Row is " + row);
-		document.getElementById("enter").value = "enter2";
-		}
-
-	console.log("Row after while loop is " + row);
-	i = 0;
-		while (row <= 15){
-			var id = 0;
-			console.log(document.getElementById(row).value)
-			if (document.getElementById(row).value === undefined){
-				break;
-			} else if (document.getElementById(row).value !== null){
-			if (row <= 15){
-				var word = [];
-				word.push("L", "O", "V", "E", "S");
-				if (document.getElementById(row).innerHTML == word[i]){
-				document.getElementById(row).style.border = "3px solid green";
-			} else if (word.includes(document.getElementById(row).innerHTML)){
-				document.getElementById(row).style.border = "3px solid yellow";
-			} else {
-				document.getElementById(row).style.border = "3px solid gray";
-			}
-		}
-	}
-		row++;
-		i++;
-		console.log("Row is " + row);
-		document.getElementById("enter").value = "enter3";
-		}
-
-	console.log("Row after while loop is " + row);
-	i = 0;
-		while (row <= 20){
-			var id = 0;
-				console.log(document.getElementById(row).value);
-			if (document.getElementById(row).value === undefined){
-
-				break;
-			} else if (document.getElementById(row).value !== null){
-			if (row <= 20){
-				var word = [];
-				word.push("L", "O", "V", "E", "S");
-				if (document.getElementById(row).innerHTML == word[i]){
-				document.getElementById(row).style.border = "3px solid green";
-			} else if (word.includes(document.getElementById(row).innerHTML)){
-				document.getElementById(row).style.border = "3px solid yellow";
-			} else {
-				document.getElementById(row).style.border = "3px solid gray";
-			}
-		}
-	}
-		row++;
-		i++;
-		console.log("Row is " + row);
-		document.getElementById("enter").value = "enter4";
-
-		}
-i = 0;
-row = 15;
-console.log("row before " + row) 
- 		while(row <= 20){
-			if(document.getElementById(row).style.border == "3px solid green"){
-				var log = 1; 
-				log++;
-				if (log == 6){
-					console.log("Congrats! You Win");
+		} else if (text_box === "row2 one"){
+			if (document.getElementsByClassName("row1 one").value === "enter"){ 
+				if (document.getElementById(id).value == undefined){
+					document.getElementById(id).innerHTML = letter;
+					document.getElementById(id).value = letter;
 					break;
 				}
 			}
-			row ++;
-		}
-i = 0;
-	console.log("Row after while loop is " + row);
-		while (row <= 25){
-
-			console.log(document.getElementById(row).value)
-			if (document.getElementById(row).value === undefined){
-				break;
-			} else if (document.getElementById(row).value !== null){
-			if (row <= 25){
-				var word = [];
-				word.push("L", "O", "V", "E", "S");
-				if (document.getElementById(row).innerHTML == word[i]){
-				document.getElementById(row).style.border = "3px solid green";
-			} else if (word.includes(document.getElementById(row).innerHTML)){
-				document.getElementById(row).style.border = "3px solid yellow";
-			} else {
-				document.getElementById(row).style.border = "3px solid gray";
+		} else if (text_box === "row3 one"){
+			if (document.getElementsByClassName("row2 one").value === "enter"){ 
+				if (document.getElementById(id).value == undefined){
+					document.getElementById(id).innerHTML = letter;
+					document.getElementById(id).value = letter;
+					break;
+				}
+			}
+		} else if (text_box === "row4 one"){
+			if (document.getElementsByClassName("row3 one").value === "enter"){ 
+				if (document.getElementById(id).value == undefined){
+					document.getElementById(id).innerHTML = letter;
+					document.getElementById(id).value = letter;
+					break;
+				}
+			}
+		} else if (text_box === "row5 one"){
+			if (document.getElementsByClassName("row4 one").value === "enter"){ 
+				if (document.getElementById(id).value == undefined){
+					document.getElementById(id).innerHTML = letter;
+					document.getElementById(id).value = letter;
+					break;
+				}
 			}
 		}
+
+		id++;
 	}
-		row++;
-		i++;
-		console.log("Row is " + row);
+
+}
+
+
+document.addEventListener("keypress", function(event) {
+    if (event.key !== undefined) {
+    	var keyboard;
+    	keyboard = event.key.toUpperCase();
+        choosingKeyBoard(keyboard);
+    }
+
+});
+
+document.addEventListener("keydown", function(event){
+	if(event.key == "Enter"){
+		enterWord();  
+	}
+
+	if (event.key == "Backspace"){
+		backSpace();
+	}
+
+});
+
+var id = 1;
+function enterWord(){
+	var i = 0;
+	var t = 0;
+		var className_value = document.getElementById(id).className.value;
+		var text_box = document.getElementById(id).className;
+		var text_box_value = document.getElementById(id).value;
+		if (document.getElementById(5).value !== undefined){
+			while (id <= 5){
+				checkRepeatedLetters(i, t, id);
+				id++;
+				t++;
+				i++;
+			}
+			document.getElementsByClassName("row1 one").value = "enter";
+		}
+		if (document.getElementById(10).value !== undefined){
+			letterList = [];
+			i = 0;
+			t = 0;
+			while (id <= 10){
+				checkRepeatedLetters(i, t, id);
+				id++;
+				t++;
+				i++;
+			}
+			document.getElementsByClassName("row2 one").value = "enter";
+
+		}
+		if (document.getElementById(15).value !== undefined){
+			letterList = [];
+			i = 0;
+			t = 0;
+			while (id <= 15){
+				checkRepeatedLetters(i, t, id);
+				className_value = "enter"
+				id++;
+				t++;
+				i++;
+
+			}
+			document.getElementsByClassName("row3 one").value = "enter";
+		}
+		if (document.getElementById(20).value !== undefined){
+			letterList = [];
+			i = 0;
+			t = 0;
+			while (id <= 20){
+				checkRepeatedLetters(i, t, id);
+				className_value = "enter"
+				id++;
+				t++;
+				i++;
+
+			}
+
+			document.getElementsByClassName("row4 one").value = "enter";
+
+		}
+		if (document.getElementById(25).value !== undefined){
+			letterList = [];
+			i = 0;
+			t = 0;
+			while (id <= 25){
+				checkRepeatedLetters(i, t, id);
+				className_value = "enter"
+				id++;
+				t++;
+				i++;
+
+			}
+			document.getElementsByClassName("row5 one").value = "enter";
+		}
+}
+
+ 
+function checkRepeatedLetters(i, t, id){
+	var ans = "LOVES";
+	var text_box = document.getElementById(id).className;
+		if (text_box === "row1 one"){
+				if (document.getElementById(id).value !== undefined){
+					letterList.push(document.getElementById(id).innerHTML);
+				}
+		} else if (text_box === "row2 one"){
+				if (document.getElementById(id).value !== undefined){
+					letterList.push(document.getElementById(id).innerHTML);
+				}
+		} else if (text_box === "row3 one"){
+				if (document.getElementById(id).value !== undefined){
+					letterList.push(document.getElementById(id).innerHTML);
+				}
+		} else if (text_box === "row4 one"){
+				if (document.getElementById(id).value !== undefined){
+					letterList.push(document.getElementById(id).innerHTML);
+				}
+		} else if (text_box === "row5 one"){
+			if (document.getElementById(id).value !== undefined){
+				letterList.push(document.getElementById(id).innerHTML);
+			}
+		}
+		console.log(letterList)
+		while(t <= 4 && i <= 4){
+			if (letterList[i] === ans[t]){
+				document.getElementById(id).style.background = "#29a329";
+				document.getElementById(id).style.border = "3px solid transparent"
+				break;
+			} else if (ans.includes(letterList[i])){
+				duplicateCharCount(ans);
+				document.getElementById(id).style.background = "#e6e600";
+				console.log(document.getElementById(id).style.background);
+				document.getElementById(id).style.border = "3px solid transparent"
+				break;
+			} else {
+		 		document.getElementById(id).style.background = "#476b6b";
+		 		console.log(document.getElementById(id).style.background);
+		 		document.getElementById(id).style.border = "3px solid transparent"	
+		 		break;
+			}
+		}
+		showWin(text_box)
+		showAnswer(ans, id)
+
+	}
+
+
+
+
+
+function duplicateCharCount(str) {
+	var letterList = []	
+	if(str) {
+		var obj = {};
+		for(let i = 0; i < str.length; i++) {
+			if(obj[str[i]]){
+				obj[str[i]] += obj[str[i]];
+				repeatingList.push(str[i]);
+			}else {
+				obj[str[i]] = 1;
+			}
 		}
 
 	}
+			
+}
+
+
+
+function showWin(classname){
+	var letter = 1;
+	var counter = 1;
+	while (letter <= 25){
+		if (document.getElementById(letter).className === classname){
+			if (document.getElementById(letter).style.background === "rgb(41, 163, 41)"){
+				counter++;
+		}
+	}
+	letter++;
+}
+	if (counter === 6){
+		$("#win").css("display", "inherit");
+		document.getElementById("win").innerHTML = "AMAZING"
+		$("#win").addClass("animated fadeIn")
+	} else {
+		return false;
+	}
+}
+
+var backspace = document.getElementById("backspace");
+
+backspace.onclick = function(){
+	var id = 1;
+	if (document.getElementsByClassName("row1 one").value === "enter"){
+		id = 7;
+	}
+	if (document.getElementsByClassName("row2 one").value === "enter"){
+		id = 12;
+	}
+	if (document.getElementsByClassName("row3 one").value === "enter"){
+		id = 17;
+	}
+	if (document.getElementsByClassName("row4 one").value === "enter"){
+		id = 22;
+	}
+	while (id <= 25){
+	console.log("hello")
+	if (document.getElementById(id).value === undefined){
+			id1 = id - 1;
+			document.getElementById(id1).innerHTML = null;
+			document.getElementById(id1).value = undefined;
+			break;
+		}
+	id++;
+	}
+}
+
+
+function backSpace(){
+	var id = 1;
+	if (document.getElementsByClassName("row1 one").value === "enter"){
+		id = 7;
+	}
+	if (document.getElementsByClassName("row2 one").value === "enter"){
+		id = 12;
+	}
+	if (document.getElementsByClassName("row3 one").value === "enter"){
+		id = 17;
+	}
+	if (document.getElementsByClassName("row4 one").value === "enter"){
+		id = 22;
+	}
+	while (id <= 25){
+	console.log("hello")
+	if (document.getElementById(id).value === undefined){
+			id1 = id - 1;
+			document.getElementById(id1).innerHTML = null;
+			document.getElementById(id1).value = undefined;
+			break;
+		}
+	id++;
+	}	
+}
+
+function showAnswer(word, id){
+	if(id == 25){
+		if (document.getElementById("win").innerHTML !== "AMAZING"){
+			$("#win").css("display", "inherit");
+			document.getElementById("win").innerHTML = word
+			$("#win").addClass("animated fadeIn")
+
+		} else {
+			return false
+		}
+	} 
+}
