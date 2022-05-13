@@ -198,7 +198,7 @@ function enterWord(){
 
  
 function checkRepeatedLetters(i, t, id){
-	var ans = "LOVES";
+	var ans = "ASSET";
 	var text_box = document.getElementById(id).className;
 		if (text_box === "row1 one"){
 				if (document.getElementById(id).value !== undefined){
