@@ -221,7 +221,6 @@ function checkRepeatedLetters(i, t, id){
 				letterList.push(document.getElementById(id).innerHTML);
 			}
 		}
-		console.log(letterList)
 		while(t <= 4 && i <= 4){
 			if (letterList[i] === ans[t]){
 				document.getElementById(id).style.background = "#29a329";
@@ -230,12 +229,10 @@ function checkRepeatedLetters(i, t, id){
 			} else if (ans.includes(letterList[i])){
 				duplicateCharCount(ans);
 				document.getElementById(id).style.background = "#e6e600";
-				console.log(document.getElementById(id).style.background);
 				document.getElementById(id).style.border = "3px solid transparent"
 				break;
 			} else {
 		 		document.getElementById(id).style.background = "#476b6b";
-		 		console.log(document.getElementById(id).style.background);
 		 		document.getElementById(id).style.border = "3px solid transparent"	
 		 		break;
 			}
@@ -304,8 +301,7 @@ backspace.onclick = function(){
 	if (document.getElementsByClassName("row4 one").value === "enter"){
 		id = 22;
 	}
-	while (id <= 25){
-	console.log("hello")
+	while (id <= 26){
 	if (document.getElementById(id).value === undefined){
 			id1 = id - 1;
 			document.getElementById(id1).innerHTML = null;
@@ -331,8 +327,7 @@ function backSpace(){
 	if (document.getElementsByClassName("row4 one").value === "enter"){
 		id = 22;
 	}
-	while (id <= 25){
-	console.log("hello")
+	while (id <= 26){)
 	if (document.getElementById(id).value === undefined){
 			id1 = id - 1;
 			document.getElementById(id1).innerHTML = null;
