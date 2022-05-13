@@ -6,8 +6,7 @@
 			max-height : 100vw;
 			margin: 0;
 			padding: 0;
-			overflow-x: hidden;
-			overflow-y: hidden;
+			overflow: hidden;
 			font-family: "Bebas Neue", sans-serif;
 		}
 
@@ -54,8 +53,6 @@
 
 		}
 
-		#wordle-board-tiles{
-		}
 
 		#row1, #row2, #row3, #row4, #row5{
 			display: grid;
@@ -120,3 +117,19 @@
 		opacity: .7;
 	}
 
+	#win{
+		background-color: black;
+		color: white;
+		z-index: 200;
+		letter-spacing: 5px;
+		width: auto;
+		height: auto;
+		padding: 10px;
+		border-radius: 10px;
+		display: none;
+		position: absolute;
+		top: 15%;
+	}
+::selection{
+	background: transparent;
+}
