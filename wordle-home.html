@@ -21,41 +21,42 @@
 		<span class = "wordle-header-title">Ansh's Wordle</span>
 	</div>
 	<div id = "wordle-board-container">
+		<div id = "win"></div>
 		<div id = "wordle-board">
 			<span id = "row1" value = "">
-				<div class="one" id= "1" value = ""></div>
-				<div class="one" id = "2" value = ""></div>
-				<div class="one" id = "3" value = ""></div>
-				<div class="one" id = "4" value = ""></div>
-				<div class="one" id = "5" value = ""></div>
+				<div class="row1 one" id = "1" value = ""></div>
+				<div class="row1 one" id = "2" value = ""></div>
+				<div class="row1 one" id = "3" value = ""></div>
+				<div class="row1 one" id = "4" value = ""></div>
+				<div class="row1 one" id = "5" value = ""></div>
 			</span>
 			<div id = "row2">
-				<span class = "one" id = "6" value = ""></span>
-				<span class = "one" id = "7" value = ""></span>			
-				<span class = "one" id = "8" value = ""></span>
-				<span class = "one" id = "9" value = ""></span>
-				<span class = "one" id = "10" value = ""></span>
+				<span class = "row2 one" id = "6" value = ""></span>
+				<span class = "row2 one" id = "7" value = ""></span>			
+				<span class = "row2 one" id = "8" value = ""></span>
+				<span class = "row2 one" id = "9" value = ""></span>
+				<span class = "row2 one" id = "10" value = ""></span>
 			</div>
 			<div id = "row3">
-				<span class = "one" id = "11" value = ""></span>
-				<span class = "one" id = "12" value = ""></span>			
-				<span class = "one" id = "13" value = ""></span>
-				<span class = "one" id = "14" value = ""></span>
-				<span class = "one" id = "15" value = ""></span>
+				<span class = "row3 one" id = "11" value = ""></span>
+				<span class = "row3 one" id = "12" value = ""></span>			
+				<span class = "row3 one" id = "13" value = ""></span>
+				<span class = "row3 one" id = "14" value = ""></span>
+				<span class = "row3 one" id = "15" value = ""></span>
 			</div>
 			<div id = "row4">
-				<span class = "one" id = "16" value = ""></span>
-				<span class = "one" id = "17" value = ""></span>			
-				<span class = "one" id = "18" value = ""></span>
-				<span class = "one" id = "19" value = ""></span>
-				<span class = "one" id = "20" value = ""></span>
+				<span class = "row4 one" id = "16" value = ""></span>
+				<span class = "row4 one" id = "17" value = ""></span>			
+				<span class = "row4 one" id = "18" value = ""></span>
+				<span class = "row4 one" id = "19" value = ""></span>
+				<span class = "row4 one" id = "20" value = ""></span>
 			</div>
 			<div id = "row5">
-				<span class = "one" id = "21" value = ""></span>
-				<span class = "one" id = "22" value = ""></span>			
-				<span class = "one" id = "23" value = ""></span>
-				<span class = "one" id = "24" value = ""></span>
-				<span class = "one" id = "25" value = ""></span>
+				<span class = "row5 one" id = "21" value = ""></span>
+				<span class = "row5 one" id = "22" value = ""></span>			
+				<span class = "row5 one" id = "23" value = ""></span>
+				<span class = "row5 one" id = "24" value = ""></span>
+				<span class = "row5 one" id = "25" value = ""></span>
 		</div>
 	</div>
 		<div id = "wordle-keyboard">
@@ -75,21 +76,24 @@
 			<a id = "f" onclick = 'choosingKeyBoard("F")'>F</a>
 			<a id = "g" onclick = 'choosingKeyBoard("G")'>G</a>
 			<a id = "h" onclick = 'choosingKeyBoard("H")'>H</a>
-			<a id = "j" onclick= 'choosingKeyBoard("J")'>J</a>
+			<a id = "j" onclick = 'choosingKeyBoard("J")'>J</a>
 			<a id = "k" onclick = 'choosingKeyBoard("K")'>K</a>
 			<a id = "l" onclick = 'choosingKeyBoard("L")'>L</a>
-			<a id = "z" onclick= 'choosingKeyBoard("Z")'>Z</a>
+			<a id = "z" onclick = 'choosingKeyBoard("Z")'>Z</a>
 			<a id = "x" onclick = 'choosingKeyBoard("X")'>X</a>
 			<a id = "c" onclick = 'choosingKeyBoard("Q")'>C</a>
 			<a id = "v" onclick = 'choosingKeyBoard("V")'>V</a>
 			<a id = "b" onclick = 'choosingKeyBoard("B")'>B</a>
 			<a id = "n" onclick = 'choosingKeyBoard("N")'>N</a>
 			<a id = "m" onclick = 'choosingKeyBoard("M")'>M</a>
-			<a id = "backspace" onclick = "backspace()">BACKSPACE</a>
+			<a id = "backspace" >BACKSPACE</a>
 		</div>
-			<a id = "enter" onclick = "enterWord()">ENTER</a>
+			<a id = "enter" onclick = "enterWord()" value = "">ENTER</a>
 		</div>
 	</div>
-	<script src = "wordle.js"></script>
+	<script  src = "wordle.js"></script>
+	<script src = "enter.js"></script>
+	<script src = "backspace.js"></script>
+
 </body>
 </html>
