@@ -227,12 +227,16 @@ function checkRepeatedLetters(i, t, id){
 				document.getElementById(id).style.border = "3px solid transparent"
 				break;
 			} else if (ans.includes(letterList[i])){
-				duplicateCharCount(ans);
 				document.getElementById(id).style.background = "#e6e600";
+				duplicateCharCount(ans, t, id);
+				/*var match = /[S]+/g;
+				var letter = letterList[i];
+				console.log(letter.match(match));*/
 				document.getElementById(id).style.border = "3px solid transparent"
 				break;
 			} else {
 		 		document.getElementById(id).style.background = "#476b6b";
+		 		console.log(document.getElementById(id).style.background)
 		 		document.getElementById(id).style.border = "3px solid transparent"	
 		 		break;
 			}
@@ -246,21 +250,27 @@ function checkRepeatedLetters(i, t, id){
 
 
 
-function duplicateCharCount(str) {
-	var letterList = []	
-	if(str) {
+function duplicateCharCount(word, id) {
+	var repeatingList = [];
+	var inputList = [];
+	var timesList = [];
+
+	if(word) {
 		var obj = {};
-		for(let i = 0; i < str.length; i++) {
-			if(obj[str[i]]){
-				obj[str[i]] += obj[str[i]];
-				repeatingList.push(str[i]);
+		for(let i = 0; i < word.length; i++) {
+			if(obj[word[i]]){
+				obj[word[i]] += obj[word[i]];
+				repeatingList.push(word[i]);
+				timesList.push(obj[word[i]]);
 			}else {
-				obj[str[i]] = 1;
+				obj[word[i]] = 1;
 			}
 		}
+		console.log(repeatingList);
+		console.log(timesList);
 
 	}
-			
+	
 }
 
 
@@ -301,7 +311,7 @@ backspace.onclick = function(){
 	if (document.getElementsByClassName("row4 one").value === "enter"){
 		id = 22;
 	}
-	while (id <= 26){
+	while (id <= 25){
 	if (document.getElementById(id).value === undefined){
 			id1 = id - 1;
 			document.getElementById(id1).innerHTML = null;
@@ -327,7 +337,7 @@ function backSpace(){
 	if (document.getElementsByClassName("row4 one").value === "enter"){
 		id = 22;
 	}
-	while (id <= 26){)
+	while (id <= 26){
 	if (document.getElementById(id).value === undefined){
 			id1 = id - 1;
 			document.getElementById(id1).innerHTML = null;
@@ -350,3 +360,5 @@ function showAnswer(word, id){
 		}
 	} 
 }
+
+
