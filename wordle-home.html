@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="rating" content="General">
+	<meta name="expires" content="never">
+	<meta name="language" content="English, EN">
+	<meta name="description" content="Ansh's Wordle">
+	<meta name="author" content="Ansh Patel">
+	<link rel="stylesheet"href="wordle.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+ 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+ 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+	<title>Ansh's Wordle</title>
+</head>
+<body>
+	<div id = "wordle-header">
+		<span class = "wordle-header-title">Ansh's Wordle</span>
+	</div>
+	<div id = "wordle-board-container">
+		<div id = "win"></div>
+		<div id = "wordle-board">
+			<span id = "row1" value = "">
+				<div class="row1 one" id = "1" value = ""></div>
+				<div class="row1 one" id = "2" value = ""></div>
+				<div class="row1 one" id = "3" value = ""></div>
+				<div class="row1 one" id = "4" value = ""></div>
+				<div class="row1 one" id = "5" value = ""></div>
+			</span>
+			<div id = "row2">
+				<span class = "row2 one" id = "6" value = ""></span>
+				<span class = "row2 one" id = "7" value = ""></span>			
+				<span class = "row2 one" id = "8" value = ""></span>
+				<span class = "row2 one" id = "9" value = ""></span>
+				<span class = "row2 one" id = "10" value = ""></span>
+			</div>
+			<div id = "row3">
+				<span class = "row3 one" id = "11" value = ""></span>
+				<span class = "row3 one" id = "12" value = ""></span>			
+				<span class = "row3 one" id = "13" value = ""></span>
+				<span class = "row3 one" id = "14" value = ""></span>
+				<span class = "row3 one" id = "15" value = ""></span>
+			</div>
+			<div id = "row4">
+				<span class = "row4 one" id = "16" value = ""></span>
+				<span class = "row4 one" id = "17" value = ""></span>			
+				<span class = "row4 one" id = "18" value = ""></span>
+				<span class = "row4 one" id = "19" value = ""></span>
+				<span class = "row4 one" id = "20" value = ""></span>
+			</div>
+			<div id = "row5">
+				<span class = "row5 one" id = "21" value = ""></span>
+				<span class = "row5 one" id = "22" value = ""></span>			
+				<span class = "row5 one" id = "23" value = ""></span>
+				<span class = "row5 one" id = "24" value = ""></span>
+				<span class = "row5 one" id = "25" value = ""></span>
+				<span id = "26" value = ""></span>
+		</div>
+	</div>
+		<div id = "wordle-keyboard">
+			<a id = "q" onclick = 'choosingKeyBoard("Q")'>Q</a>
+			<a id = "w" onclick = 'choosingKeyBoard("W")'>W</a>
+			<a id = "e" onclick = 'choosingKeyBoard("E")'>E</a>
+			<a id = "r" onclick = 'choosingKeyBoard("R")'>R</a>
+			<a id = "t" onclick = 'choosingKeyBoard("T")'>T</a>
+			<a id = "y" onclick = 'choosingKeyBoard("Y")'>Y</a>
+			<a id = "u" onclick = 'choosingKeyBoard("U")'>U</a>
+			<a id = "i" onclick = 'choosingKeyBoard("I")'>I</a>
+			<a id = "o" onclick = 'choosingKeyBoard("O")'>O</a>
+			<a id = "p" onclick = 'choosingKeyBoard("P")'>P</a>
+			<a id = "a" onclick = 'choosingKeyBoard("A")'>A</a>
+			<a id = "s" onclick = 'choosingKeyBoard("S")'>S</a>
+			<a id = "d" onclick = 'choosingKeyBoard("D")'>D</a>
+			<a id = "f" onclick = 'choosingKeyBoard("F")'>F</a>
+			<a id = "g" onclick = 'choosingKeyBoard("G")'>G</a>
+			<a id = "h" onclick = 'choosingKeyBoard("H")'>H</a>
+			<a id = "j" onclick = 'choosingKeyBoard("J")'>J</a>
+			<a id = "k" onclick = 'choosingKeyBoard("K")'>K</a>
+			<a id = "l" onclick = 'choosingKeyBoard("L")'>L</a>
+			<a id = "z" onclick = 'choosingKeyBoard("Z")'>Z</a>
+			<a id = "x" onclick = 'choosingKeyBoard("X")'>X</a>
+			<a id = "c" onclick = 'choosingKeyBoard("Q")'>C</a>
+			<a id = "v" onclick = 'choosingKeyBoard("V")'>V</a>
+			<a id = "b" onclick = 'choosingKeyBoard("B")'>B</a>
+			<a id = "n" onclick = 'choosingKeyBoard("N")'>N</a>
+			<a id = "m" onclick = 'choosingKeyBoard("M")'>M</a>
+			<a id = "backspace" >BACKSPACE</a>
+		</div>
+			<a id = "enter" onclick = "enterWord()" value = "">ENTER</a>
+		</div>
+	</div>
+	<script  src = "wordle.js"></script>
+	<script src = "enter.js"></script>
+	<script src = "backspace.js"></script>
+
+</body>
+</html>
