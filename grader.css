@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&family=Rubik&display=swap');
+body{
+    background-color: lightseagreen;
+    font-family: 'Rubik', sans-serif;
+}
+
+#title{
+    margin: 3%;
+    padding: 3%;
+    background-color: whitesmoke;
+    width: 100vw;
+    height: fit-content;
+    text-decoration: underline;
+}
+
+#search_title{
+    font-size: 150%;
+    display: flex;
+    justify-content: left;
+    position: relative;
+    bottom: 40%;
+    padding: 3%;
+}
